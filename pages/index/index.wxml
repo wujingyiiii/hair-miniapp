@@ -1,0 +1,105 @@
+<!-- 首页 -->
+<view class="page">
+  <!-- 全屏背景 -->
+  <view class="page-bg">
+    
+  </view>
+
+  <!-- 内容区域 -->
+  <scroll-view class="content" scroll-y enhanced>
+
+    <!-- 会员信息卡（未登录显示登录入口） -->
+    <view class="glass-card user-card" bindtap="goLogin">
+      <view class="user-row">
+        <view class="user-avatar">{{avatarText}}</view>
+        <view class="user-info">
+          <text class="user-name">{{isLoggedIn ? userInfo.nickName : '点击登录'}}</text>
+          <text class="user-subtitle">{{isLoggedIn ? memberInfo.level || '普通会员' : '登录体验完整功能'}}</text>
+        </view>
+        <view wx:if="{{isLoggedIn && memberInfo}}">
+          <text class="member-tag">{{memberInfo.level}}</text>
+        </view>
+      </view>
+      <!-- 资产概览（登录后显示） -->
+      <view wx:if="{{isLoggedIn && memberInfo}}" class="asset-row">
+        <view class="asset-item" bindtap="goMember">
+          <text class="asset-num">{{memberInfo.points}}</text>
+          <text class="asset-label">积分</text>
+        </view>
+        <view class="asset-item" bindtap="goMember">
+          <text class="asset-num">¥{{memberInfo.balance}}</text>
+          <text class="asset-label">余额</text>
+        </view>
+        <view class="asset-item" bindtap="goMember">
+          <text class="asset-num">{{memberInfo.cards}}</text>
+          <text class="asset-label">次卡</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 快捷入口 -->
+    <view class="glass-card">
+      <view class="quick-grid">
+        <view class="quick-item" bindtap="goProducts">
+          <text class="quick-icon">🛒</text>
+          <text class="quick-label">全部产品</text>
+        </view>
+        <view class="quick-item" bindtap="goMember">
+          <text class="quick-icon">💳</text>
+          <text class="quick-label">会员中心</text>
+        </view>
+        <view class="quick-item" bindtap="goMemberCard">
+          <text class="quick-icon">🎫</text>
+          <text class="quick-label">我的次卡</text>
+        </view>
+        <view class="quick-item" bindtap="goOrders">
+          <text class="quick-icon">📋</text>
+          <text class="quick-label">消费记录</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 热门产品 -->
+    <view class="glass-card">
+      <view class="section-header">
+        <text class="section-title">🔥 热销产品</text>
+        <text class="section-more" bindtap="goProducts">更多 ›</text>
+      </view>
+      <view class="product-grid">
+        <view
+          class="product-item"
+          wx:for="{{hotProducts}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="goProductDetail"
+        >
+          <view class="product-placeholder">
+            <text class="product-emoji">🧴</text>
+          </view>
+          <text class="product-name">{{item.name}}</text>
+          <text class="product-price">¥{{item.price}}</text>
+          <text class="product-sales">已售{{item.sales}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 推荐服务（店内项目） -->
+    <view class="glass-card">
+      <view class="section-header">
+        <text class="section-title">💇 店内服务</text>
+      </view>
+      <view class="service-row" wx:for="{{services}}" wx:key="id">
+        <view class="service-left">
+          <text class="service-icon">{{item.icon}}</text>
+          <text class="service-name">{{item.name}}</text>
+        </view>
+        <view class="service-right">
+          <text class="service-duration">{{item.duration}}min</text>
+          <text class="service-price">¥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="safe-bottom" style="height:40rpx;"></view>
+  </scroll-view>
+</view>

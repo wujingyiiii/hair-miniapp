@@ -1,0 +1,132 @@
+/* 产品列表 */
+.page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 分类栏 */
+.category-bar {
+  white-space: nowrap;
+  padding: 20rpx 16rpx;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+}
+
+.cat-item {
+  display: inline-block;
+  padding: 10rpx 32rpx;
+  margin-right: 16rpx;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #666;
+  background: rgba(245,245,245,0.7);
+}
+
+.cat-item.active {
+  background: #333;
+  color: #fff;
+}
+
+/* 产品列表 */
+.product-scroll {
+  flex: 1;
+  padding: 0 0 16rpx;
+  overflow-y: auto;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.product-left {
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.product-img {
+  width: 140rpx;
+  height: 140rpx;
+  background: rgba(200,200,200,0.3);
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-emoji {
+  font-size: 44rpx;
+}
+
+.product-mid {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-desc {
+  display: block;
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12rpx;
+}
+
+.product-price {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #c4a265;
+}
+
+.product-sales {
+  font-size: 20rpx;
+  color: #bbb;
+}
+
+.product-right {
+  margin-left: 16rpx;
+  flex-shrink: 0;
+}
+
+.buy-btn {
+  width: 80rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  background: #333;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 28rpx;
+  padding: 0;
+}
+
+.buy-btn:active {
+  opacity: 0.8;
+}

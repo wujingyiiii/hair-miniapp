@@ -1,0 +1,205 @@
+/* 消费记录 / 次卡管理 */
+.page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 筛选栏 */
+.filter-bar {
+  display: flex;
+  padding: 20rpx 16rpx;
+  gap: 16rpx;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+}
+
+.filter-item {
+  padding: 10rpx 32rpx;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #666;
+  background: rgba(245,245,245,0.7);
+}
+
+.filter-item.active {
+  background: #333;
+  color: #fff;
+}
+
+/* ===== 订单统计 ===== */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-num {
+  display: block;
+  font-size: 38rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.stat-label {
+  display: block;
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.stat-divider {
+  width: 2rpx;
+  height: 50rpx;
+  background: rgba(0,0,0,0.05);
+}
+
+/* ===== 订单卡片 ===== */
+.order-card {
+  margin-bottom: 12rpx;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.order-type {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.order-time {
+  font-size: 22rpx;
+  color: #bbb;
+}
+
+.order-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.order-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.order-amount {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #e85c5c;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16rpx;
+  border-top: 2rpx solid rgba(0,0,0,0.04);
+}
+
+.order-pay {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.order-status {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.order-status.done {
+  color: #2e7d32;
+}
+
+/* ===== 次卡列表 ===== */
+.cards-list {
+  position: relative;
+  z-index: 1;
+  padding-top: 16rpx;
+}
+
+.card-item {
+  margin-bottom: 16rpx;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.card-service {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.card-status {
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 16rpx;
+}
+
+.card-status.active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.card-status.used {
+  background: #f5f5f5;
+  color: #999;
+}
+
+.card-remain {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.remain-num {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #c4a265;
+}
+
+.card-total {
+  display: block;
+  font-size: 22rpx;
+  color: #bbb;
+  margin-top: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.card-progress {
+  height: 8rpx;
+  background: #f0f0f0;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #c4a265, #e8d5a3);
+  border-radius: 4rpx;
+}
+
+/* 空态 */
+.empty-state {
+  text-align: center;
+  padding: 80rpx 0;
+  color: #bbb;
+  font-size: 26rpx;
+}

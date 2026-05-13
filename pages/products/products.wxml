@@ -1,0 +1,54 @@
+<!-- 产品列表 -->
+<view class="page">
+  <view class="page-bg">
+  </view>
+
+  <view class="content-wrap">
+    <!-- 分类栏 -->
+    <scroll-view class="category-bar" scroll-x enhanced show-scrollbar="{{false}}">
+      <view
+        class="cat-item {{currentCat === index ? 'active' : ''}}"
+        wx:for="{{categories}}"
+        wx:key="index"
+        data-index="{{index}}"
+        bindtap="switchCategory"
+      >
+        <text>{{item}}</text>
+      </view>
+    </scroll-view>
+
+    <!-- 产品列表 -->
+    <scroll-view class="product-scroll" scroll-y enhanced>
+      <view
+        class="glass-card product-card"
+        wx:for="{{filteredProducts}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="goDetail"
+      >
+        <view class="product-left">
+          <view class="product-img">
+            <text class="product-emoji">🧴</text>
+          </view>
+        </view>
+        <view class="product-mid">
+          <text class="product-title">{{item.name}}</text>
+          <text class="product-desc">{{item.description}}</text>
+          <view class="product-meta">
+            <text class="product-price">¥{{item.price}}</text>
+            <text class="product-sales">已售 {{item.sales}}</text>
+          </view>
+        </view>
+        <view class="product-right">
+          <button class="buy-btn" bindtap="addCart" data-id="{{item.id}}" data-stoppropagation>加入</button>
+        </view>
+      </view>
+
+      <view class="empty-state" wx:if="{{filteredProducts.length === 0}}">
+        <text>暂无产品</text>
+      </view>
+
+      <view style="height:40rpx;"></view>
+    </scroll-view>
+  </view>
+</view>

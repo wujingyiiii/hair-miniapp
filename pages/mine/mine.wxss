@@ -1,0 +1,121 @@
+/* 我的 */
+.page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-area {
+  position: relative;
+  z-index: 1;
+  padding-top: 16rpx;
+}
+
+/* 用户区域 */
+.user-section {
+  /* glass-card */
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.user-phone {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.arrow {
+  font-size: 36rpx;
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+/* 会员简卡 */
+.member-brief {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 24rpx;
+  padding-top: 20rpx;
+  border-top: 2rpx solid rgba(0,0,0,0.05);
+}
+
+.brief-item {
+  text-align: center;
+  flex: 1;
+}
+
+.brief-num {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.brief-label {
+  display: block;
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.brief-divider {
+  width: 2rpx;
+  height: 40rpx;
+  background: rgba(0,0,0,0.05);
+}
+
+/* 菜单 */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 0;
+  border-bottom: 2rpx solid rgba(0,0,0,0.04);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+
+.menu-label {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.menu-arrow {
+  font-size: 32rpx;
+  color: #ccc;
+}

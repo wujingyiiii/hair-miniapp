@@ -1,0 +1,60 @@
+/* 全局样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'PingFang SC', sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* ===== 全屏背景 ===== */
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFE4C4 50%, #F5DEB3 100%);
+}
+.page-bg image {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== 毛玻璃内容卡片 ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16rpx;
+  margin: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+/* ===== 通用按钮 ===== */
+.btn-primary {
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #fff;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn-primary:active {
+  opacity: 0.85;
+}
+
+/* ===== 空态 ===== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  color: #bbb;
+  font-size: 14px;
+}

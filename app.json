@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/products/products",
+    "pages/member/member",
+    "pages/mine/mine",
+    "pages/appointments/appointments"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "金手指美发",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/products/products",
+        "text": "产品",
+        "iconPath": "images/booking.png",
+        "selectedIconPath": "images/booking-active.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "会员",
+        "iconPath": "images/member.png",
+        "selectedIconPath": "images/member-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

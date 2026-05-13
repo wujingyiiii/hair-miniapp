@@ -1,0 +1,81 @@
+<!-- 消费记录 / 次卡管理 -->
+<view class="page">
+  <view class="page-bg">
+    <image src="/images/background.png" mode="aspectFill"></image>
+  </view>
+
+  <!-- 筛选标签 -->
+  <view class="filter-bar">
+    <view
+      class="filter-item {{currentType === 'orders' ? 'active' : ''}}"
+      bindtap="switchType"
+      data-type="orders"
+    >消费记录</view>
+    <view
+      class="filter-item {{currentType === 'cards' ? 'active' : ''}}"
+      bindtap="switchType"
+      data-type="cards"
+    >次卡管理</view>
+  </view>
+
+  <view wx:if="{{currentType === 'orders'}}">
+    <!-- 订单统计 -->
+    <view class="glass-card stats">
+      <view class="stat-item">
+        <text class="stat-num">¥{{totalSpent || '0.00'}}</text>
+        <text class="stat-label">累计消费</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-num">{{orders.length || 0}}</text>
+        <text class="stat-label">总订单</text>
+      </view>
+    </view>
+
+    <!-- 订单列表 -->
+    <view class="order-list">
+      <view class="glass-card order-card" wx:for="{{orders}}" wx:key="id">
+        <view class="order-header">
+          <text class="order-type">{{item.type}}</text>
+          <text class="order-time">{{item.time}}</text>
+        </view>
+        <view class="order-body">
+          <text class="order-name">{{item.name}}</text>
+          <text class="order-amount">¥{{item.amount}}</text>
+        </view>
+        <view class="order-footer">
+          <text class="order-pay">{{item.payType}}</text>
+          <text class="order-status {{item.status === '已完成' ? 'done' : ''}}">{{item.status}}</text>
+        </view>
+      </view>
+
+      <view class="empty-state" wx:if="{{orders.length === 0}}">
+        <text>暂无消费记录</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{currentType === 'cards'}}">
+    <view class="cards-list">
+      <view class="glass-card card-item" wx:for="{{cards}}" wx:key="id">
+        <view class="card-top">
+          <text class="card-service">{{item.service}}</text>
+          <text class="card-status {{item.statusClass}}">{{item.status}}</text>
+        </view>
+        <text class="card-remain">
+          剩余 <text class="remain-num">{{item.remaining}}</text> 次
+        </text>
+        <text class="card-total">共 {{item.total}} 次 · 有效期至 {{item.expire}}</text>
+        <view class="card-progress">
+          <view class="progress-bar" style="width:{{item.percent}}"></view>
+        </view>
+      </view>
+
+      <view class="empty-state" wx:if="{{cards.length === 0}}">
+        <text>暂无次卡</text>
+      </view>
+    </view>
+  </view>
+
+  <view style="height:40rpx;"></view>
+</view>
