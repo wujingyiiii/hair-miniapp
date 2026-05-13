@@ -14,7 +14,6 @@ Page({
     try {
       console.log('哈哈哈')
       const allProducts = await api.getProducts()
-      console.log(这是,'allProducts')
       app.globalData.products = allProducts
       this.setData({ allProducts, filteredProducts: allProducts })
       return
